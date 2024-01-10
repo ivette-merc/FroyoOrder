@@ -1,15 +1,18 @@
-const userInputString = prompt(
+//Create prompt asking user to input froyo flavors
+//userInputString
+const froyoFlavors = prompt(
   "Enter froyo flavors! Please separate them by commas.",
   "vanilla,vanilla,vanilla,strawberry,coffee,coffee"
 );
+// Split input into array
+const order = froyoFlavors.split(",");
 
-const stringArray = userInputString.split(",");
+//Create Object from array
+const flavorCount = {};
+ 
+//Add flavors together
+for (const flavor of order) {
+  flavorCount[flavor] = flavorCount[flavor] ? flavorCount[flavor] + 1 : 1;
+}
 
-// const numbers = [];
-// for (let i = 0; i < stringArray.length; i++) {
-//   const str = stringArray[i];
-//   const number = parseInt(str);
-//   numbers.push(number);
-// }
-
-console.table()
+console.table(flavorCount);
